@@ -1,0 +1,41 @@
+.pager_define{height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin: -0px 20px 60px 20px;
+    font-family: "微软雅黑";
+    
+}
+
+.pager_define a{
+    text-decoration:none;
+    margin-left: 8px;
+    font-size: 14px;
+    color: #929292;
+    padding: 3px 8px;
+    border: 1px solid #0493bc;
+}
+
+
+.pager_define a.on, .pager_define a.on:hover {
+    color: #fff;
+    background: #0493bc;
+}
+
+.pager_define a.on:hover {
+    background: #036c8a;
+}
+
+.pager_define a.pre,.pager_define a.first_page,.pager_define a.last_page, .pager_define a.next {
+    color: #fff;
+    background: #0493bc;
+}
+
+.pager_define a.pre:hover, .pager_define a.next:hover, .pager_define a.first_page:hover, .pager_define a.last_page:hover{
+    color: #fff;
+    background: #036c8a;
+}
+
+.pager_define a:hover {
+    background: #e4e4e4;
+    text-decoration: none;
+}
