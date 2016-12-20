@@ -4,11 +4,11 @@
 		<meta charset="utf-8" />
 		<title>自定义分页书签</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/pagePlugins.js"></script>
 	</head>
 	<body>
-		<div class="pager_define">
+		<div class="pager_define1 pager_define">
 
 	   <!--  <a href="javascript:void(0);" onclick="gotoPage(1)" class="first_page">首页</a>                                      
         <a href="javascript:void(0);" onclick="gotoPage(ttt-1)" class="pre">上一页</a>                                   
@@ -25,15 +25,15 @@
         <a href="javascript:void(0);" onclick="gotoPage(ttt+1)" class="next">下一页</a>       
         <a href="javascript:void(0);" onclick="gotoPage(max)" class="last_page">末页</a> -->
  </div>
- <div class="pager_define1 pager_define"></div>
+ <div class="pager_define2 pager_define"></div>
  <script>
-
-  $(".pager_define").pager({
+//可以链式调用哦
+  $(".pager_define1").pager({
     page_curr:11,
      page_number: 20
-  });
+  }).bold();
 
-    $(".pager_define1").pager({
+    $(".pager_define2").pager({
      page_curr:2,
      page_number: 10
   });

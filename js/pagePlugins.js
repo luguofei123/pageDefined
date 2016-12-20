@@ -1,15 +1,4 @@
 
-//$.fn.extend相当于给jquery增加了一个方法，俗称静态方法；使用的时候直接$("selector").bold();
-;(function ($) {
-  $.fn.extend({
-    "bold": function () {
-      ///<summary>
-      /// 加粗字体
-      ///</summary>
-      return this.css({ fontWeight: "bold" });
-    }
-  });
-})(jQuery);
 
 //插件编写的常用模式；先定义一个闭包函数，并传递系统变量$, window, document, undefined；
 
@@ -21,18 +10,20 @@
            page_curr:11,
 
     };
-
+//定义一个构造函数
     function Pager($ele, options) {
         this.$ele = $ele;
         this.options = options = $.extend({},defaults, options);
         this.init();
     }
+//扩展构造函数，在原型上增加了一些属性和方法；
     Pager.prototype = {
         constructor: Pager,
         init: function () {
             this.renderHtml();
             //this.bindEvent();
         },
+        //生成html，这里用的是数组，最后用join变成字符串，然后在html填充；
         renderHtml: function () {
             var options = this.options;
             var   page_curr=options.page_curr;
@@ -151,11 +142,28 @@
       
     };
 
-
+//这里才是定义插件的开始；返回之前写的构造函数；return this 支持链式调用哦；
     $.fn.pager = function (options) {
         options = $.extend({},defaults, options);
 
-        return new Pager($(this), options);
+         new Pager($(this), options);
+
+        return this;
     }
 
 })(jQuery, window, document);
+
+
+
+
+//$.fn.extend相当于给jquery增加了一个方法，俗称静态方法；使用的时候直接$("selector").bold();
+;(function ($) {
+  $.fn.extend({
+    "bold": function () {
+      ///<summary>
+      /// 加粗字体
+      ///</summary>
+      return this.css({ fontWeight: "bold" });
+    }
+  });
+})(jQuery);
